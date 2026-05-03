@@ -25,7 +25,7 @@ This reads `modlist.txt` and extracts each mod in order into a merged staging fo
 
 ### FOMOD mods
 
-If an archive contains a FOMOD installer, the script will pause and prompt you to select options interactively before continuing.
+If an archive contains a FOMOD installer, the script will pause and wait for you to manually sort the files to be merged.
 
 ---
 
@@ -54,3 +54,6 @@ This setup is meant to be stupidly simple for when you just want to play with th
 - Removing a mod from Data requires you to revalidate the game as we don't keep track of overwritten files.
 - No nexus integration (Mod-manager download, new version checks)
 - Mod load ordering (not to be confused with extract ordering) has to be done manually. It may be possible to handle load ordering as well but I'm not sure how it would tie in with creation content. 
+
+## Improvements
+Working with FOMOD files is a pain. I would like for the script to store how a FOMOD mod was 'solved' in a cache location. If make-staging is applied again, it can check the cache and retrieve the modfiles. Would save the user from the pain of having to apply their work once again. 
