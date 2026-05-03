@@ -1,7 +1,6 @@
 # BethesdaBasher
 
-> _Brief description goes here._
-
+> a barebones, simple mod manager for Bethesda games. Download the mod archive files, define the order they should be applied and generate a folder ready to be dropped into the games Data folder. It doesn't do anything fancy but makes small-scale modding on Linux trivial. 
 ---
 
 ## Usage
@@ -14,7 +13,7 @@ Drop your mod archives into the `modfiles/` folder, then run the two scripts in 
 ./make-modlist
 ```
 
-This scans the `modfiles/` folder and generates `modlist.txt`, which defines the order mods will be applied. Open `modlist.txt` and reorder the entries to your liking — mods listed later override files from earlier ones on conflict.
+This scans the `modfiles/` folder and generates `modlist.txt`, which defines the order mods will be applied. Open `modlist.txt` and reorder the entries to your liking — mods listed later override files from earlier ones.
 
 **2. Build the staging folder**
 
@@ -49,3 +48,9 @@ git clone https://github.com/Hjorthen/BethesdaBasher
 cd BethesdaBasher
 chmod +x make-modlist make-staging
 ```
+## What it doesn't do
+This setup is meant to be stupidly simple for when you just want to play with the community patch and a few QoL mods, without having to juggle archive files and extraction ordering. As such I want to be straight forward about what not to expect. 
+
+- Removing a mod from Data requires you to revalidate the game as we don't keep track of overwritten files.
+- No nexus integration (Mod-manager download, new version checks)
+- Mod load ordering (not to be confused with extract ordering) has to be done manually. It may be possible to handle load ordering as well but I'm not sure how it would tie in with creation content. 
