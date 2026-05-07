@@ -1,0 +1,5 @@
+modfiles/
+modlist.txt
+.tmp/
+data_staging/
+*.swp
